@@ -1,9 +1,13 @@
 # docker-essentials
 Comandos e dicas para utilização do docker
 
+## Definições
+
 Imagem = Funciona como se fosse uma classe, a partir da imagem são criados os containers, que seriam semelhantes a instância de uma imagem
 
 Container = Funciona como se fosse um instância de uma imagem Docker 
+
+## Container
 
 Listar todos os containers:
 ```
@@ -18,11 +22,6 @@ docker ps
 Listar os ids de todos os containers (A flag -q fas retornar apenas os ids):
 ```
 docker ps -a -q
-```
-
-Listar todas as imagens na máquina:
-```
-docker images
 ```
 
 Criar container sem executá-lo:
@@ -88,15 +87,17 @@ Remover todos os container:
 docker rm $(docker ps -a -q); 
 ```
 
-Remover todas as imagens
+Configurar o diretório inicial do container:
 ```
-docker rmi $(docker images -a -q) -f
+docker run -w caminhoDoDiretorioNoContainer
 ```
 
-Remover todos os volumes
+Mapear porta (Neste exemplo a porta 80 local é mapeada para a porta 80 do container apache2)
 ```
-docker system prune --volumes
+docker run -p 80:80 apache2
 ```
+
+# Imagens
 
 Procurar imagens no Docker Hub:
 ```
@@ -113,19 +114,26 @@ Executar imagens baixadas (Caso a imagem não existe será feito o download prim
 docker run ubuntu
 ```
 
+Listar todas as imagens na máquina:
+```
+docker images
+```
+
+Remover todas as imagens
+```
+docker rmi $(docker images -a -q) -f
+```
+
+## Volumes
+
+Remover todos os volumes
+```
+docker system prune --volumes
+```
+
 Criar volumes (Mapeia um diretório local para ser sincronizado com o diretório de um container)
 ```
 docker run -v $(caminhoDoDiretorioLocal):caminhoDoDiretorioNoContainer
-```
-
-Configurar o diretório inicial do container:
-```
-docker run -w caminhoDoDiretorioNoContainer
-```
-
-Mapear porta (Neste exemplo a porta 80 local é mapeada para a porta 80 do container apache2)
-```
-docker run -p 80:80 apache2
 ```
 
 Arquivo docker-compose.ylm
