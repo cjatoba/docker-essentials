@@ -126,9 +126,9 @@ docker rmi $(docker images -a -q) -f
 
 ## Volumes
 
-Remover todos os volumes:
+Remover todos os volumes não utilizados:
 ```
-docker system prune --volumes
+docker volume prune
 ```
 
 Criar volumes (Mapeia um diretório local para ser sincronizado com o diretório de um container):
