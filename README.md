@@ -97,18 +97,6 @@ Fechar o container, matando o bash, e se o bash for o job principal do container
 Irá sair do container sem matar ele, apenas fechado. Você pode voltar para este container utilizando o comandoattach:
 ```CTRL + P CTRL + Q```
 
-## Volumes
-
-Remover todos os volumes não utilizados:
-```
-docker volume prune
-```
-
-Criar volumes (Mapeia um diretório local para ser sincronizado com o diretório de um container):
-```
-docker run -v $(caminhoDoDiretorioLocal):caminhoDoDiretorioNoContainer
-```
-
 ## Fontes para estudo: 
 
 https://docs.docker.com
