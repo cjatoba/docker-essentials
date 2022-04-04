@@ -2,22 +2,22 @@
 
 Listar todos os containers:
 ```
-docker ps -a
+docker container ls -a
 ```
 
 Listar apenas os containers em execução:
 ```
-docker ps
+docker container ls
 ```
 
 Listar os ids de todos os containers (A flag -q faz retornar apenas os ids):
 ```
-docker ps -a -q
+docker container ls -a -q
 ```
 
 Criar container sem executá-lo:
 ```
-docker create nomeDoContainer
+docker container create nomeDoContainer
 ```
 
 Parar um container:
