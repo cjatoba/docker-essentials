@@ -1,81 +1,81 @@
 ## Container
 
-Listar todos os containers:
+List all containers:
 ```
 docker container ls -a
 ```
 
-Listar apenas os containers em execução:
+List only running containers:
 ```
 docker container ls
 ```
 
-Listar os ids de todos os containers (A flag -q faz retornar apenas os ids):
+List the ids of all containers (The -q flag only returns the ids):
 ```
 docker container ls -a -q
 ```
 
-Criar container sem executá-lo:
+Create container without running it:
 ```
 docker container create nomeDoContainer
 ```
 
-Parar um container:
+Stop container:
 ```
 docker stop idDoConteiner
 ```
 
-Parar os containers com base no retorno de um comando docker:
+Stop containers based on a docker command return:
 ```
 docker stop $(docker ps -a -q)
 ```
 
-Iniciar um container parado:
+Start stopped container:
 ```
 docker start idDoConteiner
 ```
 
-Exibir as estatísticas de uso do container:
+View container usage statistics:
 ```
 docker stats idDoConteiner
 ```
 
-Remover um container (Utilizar o -f no final caso o container esteja em execução):
+Remove a container (Use the -f at the end if the container is running):
 ```
 docker rm idDoConteiner
 ```
 
-Rodar um container em background, utilizando a flag -d de detached:
+Run a container in the background, using the -d flag of detached:
 ```
 docker -d image-name
 ```
 
-Retornar para um container fechado (mas não parado):
+Return to a closed (but not stopped) container:
 ```
 docker attach container-id
 ```
 
-Remover todos os container:
+Remove all containers:
 ```
 docker rm $(docker ps -a -q); 
 ```
 
-Configurar o diretório inicial do container:
+Configure the container home directory:
 ```
 docker run -w caminhoDoDiretorioNoContainer
 ```
 
-Mapear porta (Neste exemplo a porta 80 local é mapeada para a porta 80 do container apache2):
+Map port (In this example local port 80 is mapped to port 80 of the apache2 container):
 ```
 docker run -p 80:80 apache2
 ```
 
-Abrir o terminal do container:
+Open container terminal:
 ```
 docker exec nomeDaImagem bash
 ```
 
-Utilizar o terminal interativo do container (O terminal interativo serve para conserguirmos responder as questões que surgirem durante a execução de um comando, como digitar yes para permitir algo):
+Use the container's interactive terminal (The interactive terminal is for us to be able to answer questions that arise during the execution of a command, such as typing yes to allow something):
 ```
 docker exec -it image-name comandoAserExecutadoNoContainer
 ```
