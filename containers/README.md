@@ -15,6 +15,11 @@ List the ids of all containers (The -q flag only returns the ids):
 docker container ls -a -q
 ```
 
+Formatted list of containers
+```
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
+
 Create container without running it:
 ```
 docker container create nomeDoContainer
