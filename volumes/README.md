@@ -1,11 +1,11 @@
 # Volumes
 
-## Remover todos os volumes não utilizados:
+## Remove unused volumes:
 ```
 docker volume prune
 ```
 
-## Criar volumes (Mapeia um diretório local para ser sincronizado com o diretório de um container):
+## Create volumes (Maps a local directory to be synchronized with a container directory):
 ```
 docker run -v $(caminhoDoDiretorioLocal):caminhoDoDiretorioNoContainer
 ```
