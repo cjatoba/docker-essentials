@@ -10,7 +10,7 @@ Baixar imagem do Docker Hub:
 docker pull nomeDaImagem
 ```
 
-Executar imagens baixadas (Caso a imagem não existe será feito o download primeiro):
+Executar imagens baixadas (Se a imagem não existir será feito o download primeiro):
 ```
 docker run ubuntu
 ```
