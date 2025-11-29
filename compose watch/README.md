@@ -9,6 +9,11 @@
         - action: rebuild # sync | rebuild | sync+restart
           path: ./src # Local sorce path
           target: /app/src # Container path
+          initial_sync: true
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
 ```
 
 Reference: https://docs.docker.com/compose/how-tos/file-watch/
